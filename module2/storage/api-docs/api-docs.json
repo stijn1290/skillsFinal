@@ -1,0 +1,208 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Tip top bv api",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/items": {
+            "get": {
+                "tags": [
+                    "Item"
+                ],
+                "summary": "Verkrijg alle items",
+                "description": "Alle huidige items uit de database verkrijgen",
+                "operationId": "0ed361505b7376443a1c4f5a22afd9fe",
+                "responses": {
+                    "200": {
+                        "description": "items verkregen"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Item"
+                ],
+                "summary": "Item aanmaken",
+                "description": "Een nieuw item aanmaken",
+                "operationId": "cae971366990a254bc78e5128c9e9a2e",
+                "requestBody": {
+                    "description": "Verlofaanvraag details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "titel",
+                                    "prioriteit",
+                                    "beschrijving",
+                                    "tijdsduur",
+                                    "user_id"
+                                ],
+                                "properties": {
+                                    "titel": {
+                                        "type": "string",
+                                        "example": "Website maken"
+                                    },
+                                    "prioriteit": {
+                                        "type": "string",
+                                        "example": "laag"
+                                    },
+                                    "beschrijving": {
+                                        "type": "string",
+                                        "example": "beschrijving van item"
+                                    },
+                                    "tijdsduur": {
+                                        "type": "integer",
+                                        "example": "14"
+                                    },
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "iteratie": {
+                                        "type": "string",
+                                        "example": "wekelijks"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Item succesvol toegevoegd"
+                    }
+                }
+            }
+        },
+        "/api/items/{item}": {
+            "get": {
+                "tags": [
+                    "Item"
+                ],
+                "summary": "Verkrijg item met id",
+                "description": "Verkrijg specifieke item door middel van id",
+                "operationId": "a89199fa80266a2471ecad34e78bf848",
+                "parameters": [
+                    {
+                        "name": "item",
+                        "in": "path",
+                        "description": "Item id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Item succesvol opgehaald"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Item"
+                ],
+                "summary": "Item updaten",
+                "description": "Item updaten",
+                "operationId": "edfae9e4542012e27370e859e12bedc7",
+                "parameters": [
+                    {
+                        "name": "item",
+                        "in": "path",
+                        "description": "Item id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Verlofaanvraag details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "titel",
+                                    "prioriteit",
+                                    "beschrijving",
+                                    "tijdsduur",
+                                    "user_id"
+                                ],
+                                "properties": {
+                                    "titel": {
+                                        "type": "string",
+                                        "example": "Website maken"
+                                    },
+                                    "prioriteit": {
+                                        "type": "string",
+                                        "example": "laag"
+                                    },
+                                    "beschrijving": {
+                                        "type": "string",
+                                        "example": "beschrijving van item"
+                                    },
+                                    "tijdsduur": {
+                                        "type": "integer",
+                                        "example": "14"
+                                    },
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "iteratie": {
+                                        "type": "string",
+                                        "example": "wekelijks"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Item succesvol toegevoegd"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Item"
+                ],
+                "summary": "Item verwijderen",
+                "description": "Item verwijderen",
+                "operationId": "dfdf99a95d5d22f2c183f7966069dcc8",
+                "parameters": [
+                    {
+                        "name": "item",
+                        "in": "path",
+                        "description": "Item id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Item succesvol verwijderd"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Item",
+            "description": "Item"
+        }
+    ]
+}

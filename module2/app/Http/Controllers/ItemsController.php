@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 /**
  * @OA\Info(
  *     title="Tip top bv api",
+ *     description="Deze api is gebouwd voor tip top bv. Dit bedrijf wenste voor een agile achtige item crud systeen",
  *     version="1.0.0"
  * )
  */

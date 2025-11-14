@@ -1,0 +1,60 @@
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+*{
+    font-family: sans-serif;
+    overflow: hidden;
+    text-decoration: none;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    background-image: linear-gradient(to bottom, #fffc31, #6eeb83, #1be7ff);
+    background-repeat: no-repeat;
+    height: 98vh;
+}
+form , .resultaat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1446a0;
+    border-radius: 20px;
+    padding: 10px;
+    gap: 20px;
+}
+form input[type="file"]
+{
+    display: none;
+}
+.file-upload{
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.crop-size{
+    display: inline-block;
+}
+form input[type="submit"], a
+{
+    background-color: #1ac8ed;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    padding-inline: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+form input[type="submit"]:hover{
+    background-color: #1be7ff;
+}
